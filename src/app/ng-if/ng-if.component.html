@@ -1,0 +1,43 @@
+<div class="content">
+
+    <h2> Implementação diretiva *ngIf</h2>
+    <div>
+        Propriedade "Exiba": <input type="checkbox" [(ngModel)]="exiba"/>
+    </div>
+    <!-- Uso da diretiva *ngIf-->
+    <h2> Uso direto de *ngIf</h2>
+    <p *ngIf="exiba">
+        Texto exibido quando o checkbox estiver ativado(quando for "TRUE")
+    </p>
+    <p *ngIf="!exiba">
+        Texto exibido quando o checkbox estiver desativado(quando for "FALSE")
+    </p>
+    <!-- usando ngIf/else-->
+    <h2>Usando *ngIf/else</h2>
+    <p *ngIf="exiba; else primeiroElse">
+        Texto exibido quando o checkbox estiver ativado(quando for "TRUE")
+    </p>
+    <!--construindo o template(miniview)-->
+    <ng-template #primeiroElse>
+        Texto exibido quando o checkbox estiver desativado(quando for "FALSE")
+    </ng-template>
+    <!-- *ngIf - then - else -->
+    <h2> Usando *ngIf - then - else</h2>
+    <p *ngIf="exiba; then miniViewThen; else novoElse">
+    </p>
+    <ng-template #miniViewThen>
+        Texto exibido quando o checkbox estiver ativado(quando for "TRUE")
+    </ng-template>
+    <ng-template #novoElse>
+        Texto exibido quando o checkbox estiver desativado(quando for "FALSE")
+    </ng-template>
+    <!--Usando o atributo hidden-->
+    <h2>Usando o Atributo Hidden</h2>
+    <p [hidden]="exiba">
+        Texto exibido quando o checkbox estiver desativado(quando for "FALSE")
+    </p>
+    <p [hidden]="!exiba">
+        Texto exibido quando o checkbox estiver Ativado(quando for "TRUE")
+    </p>
+
+</div>
