@@ -13,6 +13,14 @@ import { CInputFilhoComponent } from './c-input-filho/c-input-filho.component';
 import { CPaiComponent } from './c-pai/c-pai.component';
 import { OutputComponent } from './output/output.component';
 import { NgIfComponent } from './ng-if/ng-if.component';
+import { NgForComponent } from './ng-for/ng-for.component';
+import { PipeComponent } from './pipe/pipe.component';
+import { LOCALE_ID, DEFAULT_CURRENCY_CODE } from '@angular/core';
+import localePt from '@angular/common/locales/pt'
+import { registerLocaleData } from '@angular/common';
+import { RaizQuadrada} from './pipe-raiz-quadrada'
+
+registerLocaleData(localePt, 'pt')
 
 @NgModule({
   declarations: [
@@ -25,13 +33,25 @@ import { NgIfComponent } from './ng-if/ng-if.component';
     CInputFilhoComponent,
     CPaiComponent,
     OutputComponent,
-    NgIfComponent],
+    NgIfComponent,
+    NgForComponent,
+    PipeComponent,
+    RaizQuadrada],
 imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    {
+    provide: LOCALE_ID,
+    useValue: 'pt'
+    },
+    {
+      provide:DEFAULT_CURRENCY_CODE,
+      useValue: 'BRL'
+    }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

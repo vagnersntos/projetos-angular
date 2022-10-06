@@ -1,0 +1,58 @@
+<table class="bordaTabela">
+    <thead>
+        <tr>
+            <th>UpperCase Pipe</th>
+            <th>LowerCase Pipe</th>
+            <th>Currency Pipe "Pipe para conversão de moedas"</th>
+            <th>Date Pipe "Pipe para conversão de datas"</th>
+            <th>Decimal Pipe "Formatação a partir de casas Decimais"</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{title | uppercase}}</td>
+            <td>{{title | lowercase}}</td>
+            <td>
+                {{numFloat | currency: "BRL"}}
+                <br/>
+                {{numFloat | currency: "USD"}}
+            </td>
+            <td>
+                {{dataHoje | date: "d/M/y"}}
+                <br/>
+                {{dataHoje | date: "shortTime"}}
+            </td>
+            <td>{{numDecimal | number: "3.4-4"}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="content">
+    <h2>Implementação de Pipe personalizado</h2>
+    <table class="bordaTable">
+        <thead>
+            <tr>
+                <th>Raiz Um</th>
+                <th>Raiz Dois</th>
+                <th>Raiz Três</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <b>Raiz Quadrada de {{raizUm}} é:</b>
+                    <br/>
+                    {{raizUm | raizquadrada}}
+                </td>
+                <td>
+                    <b>Raiz Quadrada de {{raizDois}} é:</b>
+                    {{raizDois | raizquadrada}}
+                </td>
+                <td>
+                    <b>Raiz Quadrada de {{raizTres}} é:</b>
+                    {{raizTres | raizquadrada}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

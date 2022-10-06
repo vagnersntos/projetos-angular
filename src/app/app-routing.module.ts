@@ -5,8 +5,10 @@ import { CPaiComponent } from './c-pai/c-pai.component';
 import { EventBindingComponent } from './event-binding/event-binding.component';
 import { HomeComponent } from './home/home.component';
 import { InterpolationComponent } from './interpolation/interpolation.component';
+import { NgForComponent } from './ng-for/ng-for.component';
 import { NgIfComponent } from './ng-if/ng-if.component';
 import { OutputComponent } from './output/output.component';
+import { PipeComponent } from './pipe/pipe.component';
 import { PropertyBindingComponent } from './property-binding/property-binding.component';
 import { TwoWayComponent } from './two-way/two-way.component';
 
@@ -19,7 +21,9 @@ const routes: Routes = [
   {path:'two-way', component:TwoWayComponent},
   {path:'c-input-filho', component:CPaiComponent},
   {path:'output', component:CPaiComponent},
-  {path:'ng-if', component:NgIfComponent}
+  {path:'ng-if', component:NgIfComponent},
+  {path:'ng-for', component:NgForComponent},
+  {path:'pipe', component:PipeComponent}
 ];
 
 @NgModule({
